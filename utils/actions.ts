@@ -3,6 +3,7 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '../shared/prisma-client';
 import { redirect } from 'next/navigation';
 import z from 'zod';
+console.log('middll');
 
 export const deleteTask = async (formData: FormData) => {
   const id = formData.get('id') as string;
