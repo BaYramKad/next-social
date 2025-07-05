@@ -47,6 +47,7 @@ export const createTask = async (prevData: FormData, formData: FormData) => {
 };
 
 export const getAllTasks = async () => {
+  console.log('middlware');
   return await prisma.task.findMany({
     orderBy: {
       createdAt: 'desc',
