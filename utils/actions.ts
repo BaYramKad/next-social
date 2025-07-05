@@ -4,8 +4,8 @@ import { prisma } from '../shared/prisma-client';
 import { redirect } from 'next/navigation';
 import z from 'zod';
 
-export const deleteTask = async (formData) => {
-  const id = formData.get('id');
+export const deleteTask = async (formData: FormData) => {
+  const id = formData.get('id') as string;
   await prisma.task.delete({
     where: {
       id,
@@ -15,8 +15,8 @@ export const deleteTask = async (formData) => {
   revalidatePath('./todo-list');
 };
 
-export const createTask = async (prevData, formData) => {
-  const content = formData.get('content');
+export const createTask = async (prevData: FormData, formData: FormData) => {
+  const content = formData.get('content') as string;
 
   const Task = z.object({
     content: z.string().min(5),

@@ -1,4 +1,4 @@
-import { prisma } from '../../shared/prisma-client';
+import { prisma } from '../../../shared/prisma-client';
 
 export const GET = async () => {
   const tasks = await prisma.task.findMany();

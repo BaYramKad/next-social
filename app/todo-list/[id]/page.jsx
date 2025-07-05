@@ -1,4 +1,4 @@
-import { getTask } from '../../utils/actions';
+import { getTask } from '../../../utils/actions';
 import UpdateTask from '../../../components/update-task';
 import Link from 'next/link';
 import React from 'react';

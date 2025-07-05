@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateTask } from '../app/utils/actions';
+import { updateTask } from '../utils/actions';
 
 const UpdateTask = ({ task }) => {
   const { id, completed, content } = task;

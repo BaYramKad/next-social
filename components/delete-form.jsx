@@ -1,5 +1,5 @@
 import React from 'react';
-import { deleteTask } from '../app/utils/actions';
+import { deleteTask } from '../utils/actions';
 
 const DeleteForm = ({ id }) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import DeleteForm from './delete-form';
 import Link from 'next/link';
-import { getAllTasks } from '../app/utils/actions';
+import { getAllTasks } from '../utils/actions';
 
 export const Todos = async () => {
   const data = await getAllTasks();
