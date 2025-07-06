@@ -3,7 +3,6 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '../shared/prisma-client';
 import { redirect } from 'next/navigation';
 import z from 'zod';
-console.log('middll');
 
 export const deleteTask = async (formData: FormData) => {
   const id = formData.get('id') as string;
@@ -48,7 +47,7 @@ export const createTask = async (prevData: FormData, formData: FormData) => {
 };
 
 export const getAllTasks = async () => {
-  console.log('middlware');
+  console.log('getAllTasks');
   return await prisma.task.findMany({
     orderBy: {
       createdAt: 'desc',
@@ -56,16 +55,17 @@ export const getAllTasks = async () => {
   });
 };
 
-export const getTask = async (id) => {
+export const getTask = async (id: string) => {
   return await prisma.task.findUnique({
     where: { id },
   });
 };
 
-export const updateTask = async (formData) => {
-  const id = formData.get('id');
-  const content = formData.get('content');
-  const completed = formData.get('completed');
+export const updateTask = async (formData: FormData) => {
+  const id = formData.get('id') as string;
+  const content = formData.get('content') as string;
+  const completed = formData.get('completed') as string;
+  console.log('Updated');
 
   await prisma.task.update({
     where: {
